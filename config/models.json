@@ -1,0 +1,38 @@
+[
+  {
+    "repository": "WarmBloodAban/Minimax-h3_Singularity",
+    "revision": "af671d9214a6e41ab8c2f43e9f871ea56246115f",
+    "url": "https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity/resolve/af671d9214a6e41ab8c2f43e9f871ea56246115f/Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors",
+    "directory": "diffusion_models",
+    "filename": "Minimax-h3_Singularity_ref2va_Pruned_v1.3_int8.safetensors",
+    "bytes": 20967647456,
+    "sha256": "412a7b126595a958964193f3b42513d7cf2df4196ef04223a0f05e3622949cce"
+  },
+  {
+    "repository": "prithivMLmods/MiniMax-H3-I2V-Anime-Motion-LoRA",
+    "revision": "ca20427ab7488b80fc3a14363561431e27a8f974",
+    "url": "https://huggingface.co/prithivMLmods/MiniMax-H3-I2V-Anime-Motion-LoRA/resolve/ca20427ab7488b80fc3a14363561431e27a8f974/MiniMax-H3-I2V-Anime-Motion-LoRA-1400.safetensors",
+    "directory": "loras",
+    "filename": "MiniMax-H3-I2V-Anime-Motion-LoRA-1400.safetensors",
+    "bytes": 74570616,
+    "sha256": "28e36c2e62b464b1779fc540ad2dcd6a0ed8a71ea20c6b0ca78745f7f440a2b7"
+  },
+  {
+    "repository": "Comfy-Org/MiniMax-H3",
+    "revision": "e5eb578a89295337b8ff433a035929ce0279e0b6",
+    "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/e5eb578a89295337b8ff433a035929ce0279e0b6/text_encoders/qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+    "directory": "text_encoders",
+    "filename": "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+    "bytes": 27141342152,
+    "sha256": "bc2ced0fbea64757fa9acddccfc0b3f4819d1dcf1da6c124d690d368be283923"
+  },
+  {
+    "repository": "Comfy-Org/MiniMax-H3",
+    "revision": "e5eb578a89295337b8ff433a035929ce0279e0b6",
+    "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/e5eb578a89295337b8ff433a035929ce0279e0b6/vae/minimax_h3_video_vae_fp16.safetensors",
+    "directory": "vae",
+    "filename": "minimax_h3_video_vae_fp16.safetensors",
+    "bytes": 5207808496,
+    "sha256": "7c1f131492e7eddacaac9069a61b81bdd39de5cc96561e677c5eab1cdce5e522"
+  }
+]

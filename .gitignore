@@ -8,3 +8,14 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Runtime files belong in COMFY_DATA_ROOT, never in this checkout.
+ComfyUI/
+models/
+input/
+output/
+logs/
+*.safetensors
+*.ckpt
+*.mp4
+*.part
