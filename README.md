@@ -124,6 +124,7 @@ bash scripts/submit.sh run --image /absolute/path/reference.png \
 ```
 
 提交器将参数存入 JSON，提示词不作为 shell 代码求值。相对图片路径会在提交时转为绝对路径。
+参考图会先按 EXIF 方向应用旋转或镜像，再暂存为 RGB PNG；原始图片文件保持不变。
 输出直接写回共享持久目录，计算节点退出后仍保留：
 
 ```text

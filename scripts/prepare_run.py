@@ -72,9 +72,10 @@ def main():
     input_dir.mkdir(exist_ok=True)
     image = input_dir / f"{run_id}.png"
     if args.image:
-        from PIL import Image
+        from PIL import Image, ImageOps
         with Image.open(args.image) as im:
-            im.convert("RGB").save(image)
+            # Bake EXIF rotation/mirroring into pixels before converting to PNG.
+            ImageOps.exif_transpose(im).convert("RGB").save(image)
     else:
         test_image(image)
         # Also make the checked-in UI workflow immediately usable.
