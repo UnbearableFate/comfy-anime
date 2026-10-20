@@ -172,6 +172,34 @@ ls /work/xg24i002/x10041/comfy-anime-data/logs/
 没有 `result.json` 的运行不能视为成功。不要同时在同一节点的同一端口启动多个服务；
 需要时用 `COMFY_PORT=8189` 覆盖。作业结束即释放 GPU，不提供脱离 PBS 的常驻服务。
 
+## 七海 Nana7mi：樱花坡道
+
+`scripts/submit-nana7mi.sh` 复用上述工作流，读取
+`prompts/nana7mi-sakura-slope.txt`，提交水手服、樱花坡道、步行环绕及脸部特写场景。
+参考图选用 [VirtuaReal 官方七海页面](https://vrp.moe/talents/nanami)
+的露出完整发型的立绘，原始文件保存在持久目录：
+
+```text
+/work/xg24i002/x10041/comfy-anime-data/references/nana7mi/official-tachie.webp
+```
+
+在新数据目录重现时，先将
+[官方原图](https://vrp.moe/talents/nanami/tachie.webp) 保存为
+`$COMFY_DATA_ROOT/references/nana7mi/official-tachie.webp`。参考图仅通过
+`MiniMaxH3ReferenceToVideo` 提供人物外观，场景和水手服由提示词指定。
+图片及视频不放入 Git。
+
+```bash
+bash scripts/submit-nana7mi.sh
+```
+
+固定参数为 832×480、294 帧、24 FPS（12.25 秒）、20 步、seed 715、
+Anime Motion LoRA 1.0；采样器为 `res_multistep`，调度器为 `simple`。
+此场景默认提交到 `debug-g`，walltime 为 15 分钟；可通过 `PBS_QUEUE`、
+`PBS_WALLTIME` 覆盖，提交前应检查当时的队列资源及限制。
+每次运行仍在独立 `runs/run-<id>/` 中保留实际提示词、参数、API 图和验证记录，
+视频在对应的 `output/run-<id>/` 下。完整环绕和角色一致性需要检查实际视频。
+
 ## 启动 Web UI
 
 ```bash
