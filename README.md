@@ -92,6 +92,12 @@ bash scripts/submit.sh download
 并固定 torch/torchvision/torchaudio 的 CUDA 13.0 aarch64 wheels。
 PBS 内加载站点的 `cuda/13.2` module；CUDA 13 驱动是此环境的前提。
 ComfyUI 当前版本的 INT8 CUDA 后端需要 cu130 或更高版本。
+启动时使用 `--disable-dynamic-vram`：在本机 aarch64 环境中，
+comfy-aimdo 0.5.6 的内存钩子初始化失败，因此明确使用标准 ModelPatcher；
+保留原有系统内存保护设置，不修改第三方库。
+本部署的 NVIDIA cuSPARSELt wheel 内部标签是 `manylinux2014_sbsa`，
+`uv pip check` 会报告平台标签不匹配。已检查其共享库实际为 ARM aarch64 ELF，
+并通过 GH200 上的完整推理；未修改上游 wheel 元数据来隐藏该提示。
 每个权重使用 `comfy model download` 下载，随后检查大小和 SHA256。
 已存在且校验通过的文件复用；损坏文件会报错，不会静默使用。
 

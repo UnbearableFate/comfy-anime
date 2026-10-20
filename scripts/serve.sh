@@ -6,4 +6,4 @@ echo "ComfyUI on $(hostname):$COMFY_PORT (loopback); job $PBS_JOBID"
 comfy launch -- --listen 127.0.0.1 --port "$COMFY_PORT" \
     --input-directory "$COMFY_DATA_ROOT/input" \
     --output-directory "$COMFY_DATA_ROOT/output" \
-    --disable-auto-launch --use-pytorch-cross-attention "$@"
+    --disable-auto-launch --disable-dynamic-vram --use-pytorch-cross-attention "$@"
