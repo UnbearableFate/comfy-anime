@@ -1,7 +1,7 @@
 [project]
 name = "comfy-anime"
 version = "0.1.0"
-description = "Add your description here"
+description = "Native ComfyUI MiniMax H3 anime I2V workflows for Miyabi-G"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = []

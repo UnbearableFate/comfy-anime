@@ -1,0 +1,14 @@
+#!/bin/bash
+#PBS -q short-g
+#PBS -W group_list=xg24i002
+#PBS -l select=1:mpiprocs=1
+#PBS -l walltime=00:55:00
+#PBS -j oe
+#PBS -N comfy-anime
+
+set -eEuo pipefail
+# submit.sh passes these explicitly. PBS spools this script in a different path.
+: "${ANIME_PROJECT_ROOT:?Use scripts/submit.sh}"
+: "${ANIME_REQUEST:?Use scripts/submit.sh}"
+cd "$ANIME_PROJECT_ROOT"
+exec /usr/bin/python3 scripts/dispatch.py "$ANIME_REQUEST"
